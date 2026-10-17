@@ -16,7 +16,7 @@ for (const path of pages) {
 
 test("booking and restaurant actions use verified external destinations", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator('.home-hero a[href="https://www.booking.com/hotel/bq/barrel-house-st-eustatius.html"]')).toBeVisible();
+  await expect(page.locator('.site-header a[href="https://www.booking.com/hotel/bq/barrel-house-st-eustatius.html"]').first()).toHaveAttribute("target", "_blank");
   await expect(page.locator('a[href="https://barrel-house-statia.resos.com/booking"]').first()).toHaveAttribute("target", "_blank");
 });
 
@@ -32,12 +32,12 @@ test("mobile menu opens, works, and closes after navigation", async ({ page }, t
 
 test("suite gallery supports keyboard navigation and close", async ({ page }) => {
   await page.goto("/stay/barrel-house-suite");
-  const gallery = page.getByRole("button", { name: /Open image 1/ });
+  const gallery = page.getByRole("button", { name: /^Open image 1 of/ });
   await gallery.scrollIntoViewIfNeeded();
   await gallery.click();
   await expect(page.getByRole("dialog", { name: "Suite image gallery" })).toBeVisible();
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".lightbox figcaption")).toContainText("02 / 06");
+  await expect(page.locator(".lightbox figcaption")).toContainText("02 / 10");
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog", { name: "Suite image gallery" })).toBeHidden();
 });

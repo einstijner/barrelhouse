@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { BookingLink, TableLink } from "@/components/booking-link";
+import { TableLink } from "@/components/booking-link";
 import { BookBand } from "@/components/book-band";
 import { JsonLd } from "@/components/schema";
 import { property, siteUrl } from "@/content/property";
-import { restaurantImages, suiteImages } from "@/content/images";
+import { homeHeroImage, restaurantImages, suiteImages } from "@/content/images";
 
 export default function Home() {
   return <>
     <JsonLd data={{ "@context":"https://schema.org", "@type":"LodgingBusiness", name:property.name, description:"A restored one-bedroom oceanfront suite for two in Lower Town, Sint Eustatius.", url:siteUrl, image:suiteImages.map((image) => `${siteUrl ?? ""}${image.src}`), address:{ "@type":"PostalAddress", streetAddress:property.address.street, addressLocality:property.address.locality, addressCountry:"BQ" }, amenityFeature:property.amenities.map((name) => ({ "@type":"LocationFeatureSpecification", name, value:true })) }} />
     <section className="home-hero">
-      <div className="home-hero-media"><Image src={suiteImages[0].src} alt={suiteImages[0].alt} fill priority sizes="100vw" /></div>
-      <div className="home-hero-copy"><p className="eyebrow eyebrow-light">Barrel House · St. Eustatius</p><h1>A different kind <em>of stay.</em></h1><p>A thoughtfully restored oceanfront suite in the historic heart of Statia.</p><div className="hero-actions"><Link className="button button-light" href="/stay/barrel-house-suite">Explore the suite <ArrowRight size={15} /></Link><BookingLink className="text-link">View availability</BookingLink></div></div>
+      <div className="home-hero-media"><Image src={homeHeroImage.src} alt={homeHeroImage.alt} fill priority sizes="100vw" /></div>
+      <div className="home-hero-copy"><p className="eyebrow eyebrow-light">Barrel House · St. Eustatius</p><h1>A different kind <em>of stay.</em></h1><p>A thoughtfully restored oceanfront suite in the historic heart of Statia.</p></div>
       <span className="hero-index">Lower Town · 17.479° N</span>
     </section>
 

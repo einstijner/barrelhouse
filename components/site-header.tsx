@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -8,7 +9,7 @@ import { navigation } from "@/content/navigation";
 import { booking } from "@/content/property";
 
 export function Wordmark({ light = false }: { light?: boolean }) {
-  return <Link href="/" className={`wordmark${light ? " wordmark-light" : ""}`} aria-label="Barrel House Statia, home"><span>BH</span><strong>Barrel House</strong><small>Statia</small></Link>;
+  return <Link href="/" className={`wordmark${light ? " wordmark-light" : ""}`} aria-label="Barrel House Statia, home"><Image src="/logos/barrel-house-reference.png" alt="Barrel House" width={300} height={316} priority /></Link>;
 }
 
 export function SiteHeader() {

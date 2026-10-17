@@ -12,6 +12,14 @@ All images below are authentic images of Barrel House or the Barrel House Suite.
 | `public/images/property/barrel-house-terrace.jpg` | The Old Gin House hospitality image server | Permission pending |
 | `public/images/restaurant/barrel-house-dining-room.jpg` | Existing Barrel House website | Permission pending |
 | `public/images/restaurant/barrel-house-terrace-dining.jpg` | Existing Barrel House website | Permission pending |
-| `public/logos/barrel-house-reference.png` | Existing Barrel House website | Reference only; not displayed publicly |
+| `public/images/restaurant/barrel-house-sunset-terrace.jpg` | Existing Barrel House website, original 2048 px file | Permission pending |
+| `public/images/restaurant/barrel-house-street-exterior.jpg` | Existing Barrel House website, original 2048 px file | Permission pending |
+| `public/images/restaurant/barrel-house-waterfront.jpg` | Existing Barrel House website, original 2048 px file | Permission pending |
+| `public/images/restaurant/barrel-house-dining-detail.jpg` | Existing Barrel House website, original 2560 px file | Permission pending |
+| `public/images/property/barrel-house-lounge-view.jpg` | Expedia / property listing image server | Permission pending |
+| `public/images/property/barrel-house-front.jpg` | Expedia / property listing image server | Permission pending |
+| `public/images/property/lower-town-beach.jpg` | Expedia / property listing image server | Permission pending |
+| `public/images/property/barrel-house-living-wide.jpg` | Expedia / property listing image server | Permission pending |
+| `public/logos/barrel-house-reference.png` | Existing Barrel House website / client-supplied logo | Displayed in site header |
 
-The current suite images are 750–1200 px wide. Obtain original high-resolution owner files before launch, especially for large-format hero placements.
+The homepage hero and new restaurant photography use 2048 px original files. Confirm publication rights with the property owner before production launch.
