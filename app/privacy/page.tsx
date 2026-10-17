@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import { property } from "@/content/property";
+
+export const metadata: Metadata = { title:"Privacy", description:"How the Barrel House Statia website handles information and links to external reservation services." };
+
+export default function PrivacyPage() {
+  return <article className="prose"><p className="eyebrow">Privacy</p><h1>A simple website, with a simple approach to data.</h1><p>Last updated 16 October 2026.</p><h2>What this website collects</h2><p>This website does not provide user accounts, process payments, or operate its own contact or booking form. We do not intentionally store personal information through the public website.</p><h2>External reservations</h2><p>Accommodation booking links lead to Booking.com. Restaurant reservation links lead to Resos. Those services process information under their own privacy policies and terms. Their sites open separately, and Barrel House Statia does not receive payment-card information through this website.</p><h2>Essential technical data</h2><p>Hosting providers may process basic request information such as IP addresses, browser details and security logs to deliver and protect the site. No optional analytics or advertising trackers are enabled by default.</p><h2>Local storage</h2><p>The website does not currently set marketing cookies or store booking details in your browser.</p><h2>Questions</h2><p>For questions about an accommodation reservation, contact <a href={`mailto:${property.accommodationContact.email}`}>{property.accommodationContact.email}</a>. This page should be reviewed by the property owner before public launch and is not legal advice.</p></article>;
+}
