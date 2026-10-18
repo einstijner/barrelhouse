@@ -37,7 +37,7 @@ test("suite gallery supports keyboard navigation and close", async ({ page }) =>
   await gallery.click();
   await expect(page.getByRole("dialog", { name: "Suite image gallery" })).toBeVisible();
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".lightbox figcaption")).toContainText("02 / 10");
+  await expect(page.locator(".lightbox figcaption")).toContainText("02 / 12");
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog", { name: "Suite image gallery" })).toBeHidden();
 });
@@ -49,8 +49,18 @@ test("home suite preview opens a click-through gallery", async ({ page }) => {
   await preview.click();
   await expect(page.getByRole("dialog", { name: "Barrel House Suite photo gallery" })).toBeVisible();
   await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".lightbox figcaption")).toContainText("02 / 11");
+  await expect(page.locator(".lightbox figcaption")).toContainText("02 / 13");
   await page.keyboard.press("Escape");
+});
+
+test("restaurant gallery exposes the full official photo set", async ({ page }) => {
+  await page.goto("/restaurant");
+  const photos = page.getByRole("button", { name: /^Open restaurant image/ });
+  await expect(photos).toHaveCount(16);
+  await photos.first().click();
+  await expect(page.getByRole("dialog", { name: "Barrel House restaurant photo gallery" })).toBeVisible();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator(".lightbox figcaption")).toContainText("02 / 16");
 });
 
 test("below-fold property images load when scrolled into view", async ({ page }) => {

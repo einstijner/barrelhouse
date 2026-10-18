@@ -100,9 +100,13 @@ h3 { font-size:clamp(2rem,3.2vw,3.5rem); }
 .restaurant-teaser-copy h2 { margin-bottom:30px; }
 .restaurant-teaser-copy p:not(.eyebrow) { max-width:480px; color:rgba(255,255,255,.72); }
 .restaurant-teaser-image { position:relative; }
-.restaurant-gallery { display:grid; grid-template-columns:1.2fr .8fr; grid-template-rows:420px 420px; gap:14px; padding:14px; background:var(--paper); }
-.restaurant-gallery figure { position:relative; margin:0; overflow:hidden; }
-.restaurant-gallery-wide { grid-row:1/3; }
+.restaurant-gallery { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:28vw; gap:8px; padding:8px; background:var(--paper); }
+.restaurant-gallery > button { position:relative; overflow:hidden; border:0; padding:0; background:var(--ink); cursor:zoom-in; }
+.restaurant-gallery > button:nth-child(7n + 1),.restaurant-gallery > button:nth-child(7n + 6) { grid-column:span 2; }
+.restaurant-gallery > button img { transition:filter .35s ease,transform .65s cubic-bezier(.2,.7,.2,1); }
+.restaurant-gallery > button:hover img { filter:brightness(.82); transform:scale(1.025); }
+.restaurant-gallery > button span { position:absolute; right:14px; bottom:12px; display:flex; align-items:center; gap:7px; color:white; font-size:.65rem; font-weight:700; letter-spacing:.1em; opacity:0; transition:opacity .3s ease,transform .3s ease; transform:translateY(5px); }
+.restaurant-gallery > button:hover span,.restaurant-gallery > button:focus-visible span { opacity:1; transform:none; }
 .discover-strip { display:grid; grid-template-columns:.7fr 1.3fr; padding:clamp(100px,13vw,190px) 6vw; }
 .discover-strip h2 { font-size:clamp(4rem,8vw,9rem); }
 .discover-strip-copy { max-width:700px; align-self:end; padding-bottom:4vw; }
@@ -247,9 +251,10 @@ h3 { font-size:clamp(2rem,3.2vw,3.5rem); }
   .gallery-grid { display:flex; flex-direction:column; }
   .gallery-item { min-height:68vw; }
   .gallery-item-1 { min-height:110vw; }
-  .restaurant-gallery { display:flex; flex-direction:column; padding:8px; }
-  .restaurant-gallery figure { min-height:72vw; }
-  .restaurant-gallery .restaurant-gallery-wide { min-height:92vw; }
+  .restaurant-gallery { grid-template-columns:1fr 1fr; grid-auto-rows:62vw; }
+  .restaurant-gallery > button:nth-child(n) { grid-column:auto; }
+  .restaurant-gallery > button:nth-child(5n + 1) { grid-column:1/3; }
+  .restaurant-gallery > button span { opacity:1; transform:none; }
   .lightbox figure { width:calc(100vw - 32px); height:70vh; }
   .lightbox-prev,.lightbox-next { top:auto; bottom:20px; }
   .lightbox-prev { left:16px; }.lightbox-next { right:16px; }
