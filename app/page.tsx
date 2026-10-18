@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { TableLink } from "@/components/booking-link";
 import { BookBand } from "@/components/book-band";
 import { JsonLd } from "@/components/schema";
+import { SuiteGalleryPreview } from "@/components/suite-gallery-preview";
 import { property, siteUrl } from "@/content/property";
 import { homeHeroImage, restaurantImages, suiteImages } from "@/content/images";
 
@@ -19,7 +20,7 @@ export default function Home() {
     <section className="wrap intro"><p className="eyebrow">A place to slow down</p><blockquote>Three centuries of brick and timber, carefully restored for an intimate stay <em>at the edge of the Caribbean Sea.</em></blockquote></section>
 
     <section className="wrap suite-feature">
-      <div className="suite-feature-grid"><div className="suite-main-image"><Image src={suiteImages[1].src} alt={suiteImages[1].alt} fill sizes="(max-width: 1000px) 100vw, 65vw" /></div><div className="suite-feature-copy"><p className="eyebrow eyebrow-light">The stay</p><h2>The Barrel House Suite</h2><p>One private apartment, set across two levels inside a historic Dutch-brick building. Quiet upstairs, generous downstairs, and the sea just beyond the terrace.</p><div className="facts-row"><div><small>Space</small><strong>{property.facts.size}</strong></div><div><small>Sleeps</small><strong>{property.facts.guests}</strong></div><div><small>Bedroom</small><strong>King bed</strong></div><div><small>Setting</small><strong>Oceanfront</strong></div></div><Link className="button button-light" href="/stay/barrel-house-suite">Discover the suite</Link></div></div>
+      <div className="suite-feature-grid"><div className="suite-main-image"><SuiteGalleryPreview /></div><div className="suite-feature-copy"><p className="eyebrow eyebrow-light">The stay</p><h2>The Barrel House Suite</h2><p>One private apartment, set across two levels inside a historic Dutch-brick building. Quiet upstairs, generous downstairs, and the sea just beyond the terrace.</p><div className="facts-row"><div><small>Space</small><strong>{property.facts.size}</strong></div><div><small>Sleeps</small><strong>{property.facts.guests}</strong></div><div><small>Bedroom</small><strong>King bed</strong></div><div><small>Setting</small><strong>Oceanfront</strong></div></div><Link className="button button-light" href="/stay/barrel-house-suite">Discover the suite</Link></div></div>
     </section>
 
     <section className="experience"><div className="wrap"><div className="experience-head"><h2>Made for <em>living slowly.</em></h2><p>Barrel House is not a conventional hotel room. It is a place with its own proportions, textures and rhythm—kept intentionally personal.</p></div><div className="experience-list">

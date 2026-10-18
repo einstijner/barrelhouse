@@ -1,5 +1,13 @@
 export type PropertyImage = { src: string; width: number; height: number; alt: string; caption: string };
 
+export const suiteOverviewImage: PropertyImage = {
+  src: "/images/restaurant/barrel-house-street-exterior.jpg",
+  width: 2048,
+  height: 1365,
+  alt: "Full historic brick exterior of Barrel House in Lower Town",
+  caption: "Barrel House in Lower Town",
+};
+
 export const suiteImages: PropertyImage[] = [
   { src: "/images/property/barrel-house-bedroom.jpg", width: 750, height: 499, alt: "King-size bed beneath the timber roof of the Barrel House Suite", caption: "The upstairs bedroom" },
   { src: "/images/property/barrel-house-living-room.jpg", width: 1200, height: 799, alt: "Living room with staircase, exposed brick and timber details", caption: "Downstairs living area" },
