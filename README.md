@@ -27,6 +27,11 @@ npm start
 - Accommodation images and alt text: `content/images.ts`
 - Guest FAQ: `content/faq.ts`
 - Navigation: `content/navigation.ts`
+- Restaurant menu: `content/menu.ts`. Add the sections and dishes exactly as the restaurant publishes them; until then the menu section on `/restaurant#menu` links to the current menu and table reservations instead of showing placeholder dishes.
+
+## Scroll motion
+
+`components/motion.tsx` writes each scene's scroll progress to the CSS variable `--p`, and `app/globals.css` animates from it under `html.motion`. Without JavaScript, or with reduced motion turned on, the site renders as a normal static page.
 
 The current room CTA uses the verified Booking.com listing and is explicitly described as an external booking. Do not relabel it as direct booking until the VIPS room mapping is verified.
 

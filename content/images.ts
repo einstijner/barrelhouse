@@ -23,7 +23,28 @@ export const suiteImages: PropertyImage[] = [
   { src: "/images/property/barrel-house-living-wide.jpg", width: 1500, height: 2000, alt: "Vaulted living room inside the Barrel House Suite", caption: "The downstairs living room" },
 ];
 
-export const homeHeroImage = suiteOverviewImage;
+export const homeHeroImage: PropertyImage = {
+  src: "/images/restaurant/gallery/436A8901.jpg",
+  width: 2048,
+  height: 1365,
+  alt: "The Barrel House oceanfront terrace at sunset, with sailboats on the bay",
+  caption: "Sunset on the terrace",
+};
+
+/** Evening and golden-hour photography for the dark, romantic sections of the site. */
+export const moodImages = {
+  cocktails: { src: "/images/restaurant/gallery/436A8947-Enhanced-NR.jpg", width: 2048, height: 1365, alt: "Cocktails and a lamp on a terrace table at dusk, with the bay behind", caption: "Golden hour" },
+  soup: { src: "/images/restaurant/gallery/436A8956-Enhanced-NR.jpg", width: 2048, height: 1862, alt: "A bowl served at the pass beneath copper kitchen lamps", caption: "From the kitchen" },
+  plate: { src: "/images/restaurant/gallery/436A8963-Enhanced-NR.jpg", width: 2048, height: 1789, alt: "A plated dish with fries on a wooden table", caption: "From scratch" },
+  chef: { src: "/images/restaurant/gallery/436A8878.jpg", width: 2048, height: 2206, alt: "The chef at work in the Barrel House kitchen", caption: "Chef Iwan’s kitchen" },
+  server: { src: "/images/restaurant/gallery/436A8888-scaled.jpg", width: 1980, height: 2560, alt: "A server carrying a cocktail through the historic doorway", caption: "Welcome in" },
+  arch: { src: "/images/restaurant/gallery/436A8902-scaled.jpg", width: 1707, height: 2560, alt: "The bay framed by an old brick arch at Barrel House", caption: "Through the arch" },
+  drinks: { src: "/images/restaurant/gallery/436A8950-scaled.jpg", width: 1707, height: 2560, alt: "Cocktails on the terrace at dusk", caption: "On the terrace" },
+  shoreline: { src: "/images/restaurant/gallery/436A8933-scaled.jpg", width: 2007, height: 2560, alt: "Sunset over the rocky Lower Town shoreline", caption: "Lower Town at sunset" },
+  terraceSun: { src: "/images/restaurant/gallery/436A8870.jpg", width: 2048, height: 1365, alt: "Sun setting behind the Barrel House terrace", caption: "Last light" },
+  tableNight: { src: "/images/restaurant/night/table-at-night.webp", width: 1200, height: 1600, alt: "A candlelit table on the Barrel House terrace at night", caption: "After dark" },
+  terraceNight: { src: "/images/restaurant/night/terrace-night.webp", width: 1200, height: 1600, alt: "The Barrel House terrace lit with string lights at night", caption: "The terrace at night" },
+} satisfies Record<string, PropertyImage>;
 
 export const restaurantImages = {
   exterior: { src: "/images/restaurant/barrel-house-dining-room.jpg", width: 2048, height: 1365, alt: "Historic brick Barrel House building in Lower Town" },

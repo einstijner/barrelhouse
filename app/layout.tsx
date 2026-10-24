@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { MotionRoot } from "@/components/motion";
 import { siteUrl } from "@/content/property";
 import "./globals.css";
 
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg" },
 };
 
-export const viewport: Viewport = { themeColor: "#24231f", colorScheme: "light" };
+export const viewport: Viewport = { themeColor: "#0d0a08", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${display.variable} ${body.variable}`}><body><a className="skip-link" href="#main">Skip to content</a><SiteHeader /><main id="main">{children}</main><SiteFooter /></body></html>;
+  return <html lang="en" className={`${display.variable} ${body.variable}`}><body><a className="skip-link" href="#main">Skip to content</a><SiteHeader /><main id="main">{children}</main><SiteFooter /><MotionRoot /></body></html>;
 }

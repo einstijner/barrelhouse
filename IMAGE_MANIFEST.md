@@ -22,6 +22,8 @@ All images below are authentic images of Barrel House or the Barrel House Suite.
 | `public/images/property/barrel-house-front.jpg` | Expedia / property listing image server | Permission pending |
 | `public/images/property/lower-town-beach.jpg` | Expedia / property listing image server | Permission pending |
 | `public/images/property/barrel-house-living-wide.jpg` | Expedia / property listing image server | Permission pending |
+| `public/images/restaurant/night/table-at-night.webp` | Owner-supplied photography (via the sinteustatius.com project, received 2026-09-17) | Permission pending |
+| `public/images/restaurant/night/terrace-night.webp` | Owner-supplied photography (via the sinteustatius.com project, received 2026-09-17) | Permission pending |
 | `public/logos/barrel-house-reference.png` | Existing Barrel House website / client-supplied logo | Displayed in site header |
 | `public/images/restaurant/gallery/436A*.jpg` (16 files) | Existing Barrel House website, original professional gallery files | Permission pending |
 

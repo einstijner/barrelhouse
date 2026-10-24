@@ -6,9 +6,9 @@ import { Wordmark } from "@/components/site-header";
 
 export function SiteFooter() {
   return <footer className="site-footer">
-    <div className="footer-lead"><Wordmark light /><p>A restored oceanfront suite in historic Lower Town, Sint Eustatius.</p></div>
+    <div className="footer-lead"><Wordmark className="wordmark-large" /><p>A restored oceanfront suite and restaurant in historic Lower Town, Sint Eustatius.</p></div>
     <div className="footer-columns">
-      <div><small>Explore</small>{navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}<Link href="/faq">Guest information</Link></div>
+      <div><small>Explore</small>{navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}<Link href="/faq">Guest information</Link><Link href="/contact">Contact</Link></div>
       <div><small>Visit</small><p>{property.address.street}<br />{property.address.locality}<br />{property.address.island}</p><a href={property.address.map} target="_blank" rel="noreferrer">Open in Maps ↗</a></div>
       <div><small>Reserve</small><a href={booking.room} target="_blank" rel="noreferrer">Book the suite ↗</a><a href={booking.restaurant} target="_blank" rel="noreferrer">Book a table ↗</a><a href={property.instagram} target="_blank" rel="noreferrer"><Instagram size={14} /> Instagram</a></div>
     </div>
