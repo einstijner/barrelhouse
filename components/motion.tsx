@@ -66,10 +66,10 @@ export function Scene({ id, className, length, label, labelledBy, children }: { 
 }
 
 /** A plain block that exposes --p while it scrolls through the viewport, for parallax and drifting rows. */
-export function Drift({ className, children, as: Tag = "div" }: { className: string; children: ReactNode; as?: "div" | "section" }) {
+export function Drift({ className, children, as: Tag = "div", label }: { className: string; children: ReactNode; as?: "div" | "section"; label?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useScrollProgress(ref, "through");
-  return Tag === "section" ? <section ref={ref} className={className}>{children}</section> : <div ref={ref} className={className}>{children}</div>;
+  return Tag === "section" ? <section ref={ref} className={className} aria-label={label}>{children}</section> : <div ref={ref} className={className}>{children}</div>;
 }
 
 /** A pinned section whose rail of cards slides sideways as the page scrolls down; its height matches the rail's overflow. */

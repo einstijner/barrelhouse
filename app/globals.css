@@ -92,7 +92,11 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
 
 /* Home: statement lit word by word */
 .statement .scene-sticky { display:grid; place-items:center; padding:120px var(--gutter); background:radial-gradient(55% 45% at 50% 50%,rgba(201,163,106,.09),transparent 70%),var(--night); }
-.statement-text { max-width:1150px; margin:0; font-family:var(--font-display),serif; font-size:clamp(2.3rem,5.4vw,5.6rem); line-height:1.08; letter-spacing:-.015em; text-align:center; }
+.statement .scene-sticky { isolation:isolate; }
+.statement-photo { position:absolute; z-index:-1; inset:0; }
+.statement-photo img { filter:brightness(.28) saturate(.9); }
+.motion .statement-photo img { transform:scale(calc(1.12 - var(--p) * .12)); }
+.statement-text { position:relative; max-width:1150px; margin:0; font-family:var(--font-display),serif; font-size:clamp(2.3rem,5.4vw,5.6rem); line-height:1.08; letter-spacing:-.015em; text-align:center; }
 .statement-text em { color:var(--gold); font-style:italic; }
 .motion .statement .scene-sticky { padding-block:0; }
 .motion .word { opacity:clamp(.12,calc((var(--p) * 1.3 - .1) * var(--n) - var(--i)),1); }
@@ -127,6 +131,17 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
 .motion .suite-main-image::after { opacity:clamp(0,calc((var(--p) - .45) / .2),1); }
 .motion .suite-feature-copy { --t:clamp(0,calc((var(--p) - .55) / .17),1); position:absolute; z-index:2; bottom:clamp(40px,8svh,96px); left:var(--gutter); max-width:760px; padding:0; opacity:var(--t); transform:translateY(calc((1 - var(--t)) * 50px)); pointer-events:none; }
 .motion .suite-feature-copy a { pointer-events:auto; }
+
+/* Home: photo wall, three columns drifting at different speeds */
+.photo-wall { --p:.5; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; max-height:150svh; padding:0 var(--gutter); overflow:hidden; background:var(--night); }
+.photo-wall-col { display:flex; flex-direction:column; gap:14px; }
+.photo-wall-col-2 { margin-top:-18svh; }
+.photo-wall-item { margin:0; overflow:hidden; background:var(--ember); }
+.photo-wall-item img { display:block; width:100%; height:auto; transition:transform 1.2s var(--ease),filter .5s ease; filter:brightness(.9); }
+.photo-wall-item:hover img { filter:brightness(1); transform:scale(1.04); }
+.motion .photo-wall-col-1 { transform:translateY(calc((var(--p) - .5) * -24svh)); }
+.motion .photo-wall-col-2 { transform:translateY(calc((var(--p) - .5) * 30svh)); }
+.motion .photo-wall-col-3 { transform:translateY(calc((var(--p) - .5) * -40svh)); }
 
 /* Home: sideways rail of restaurant moments */
 .rail .scene-sticky { display:flex; flex-direction:column; justify-content:center; gap:clamp(24px,4svh,44px); padding:110px 0 60px; background:var(--coal); }
@@ -272,6 +287,16 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
 .prose p,.prose li { color:var(--muted); }
 .prose a:not(.button) { color:var(--cream); text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:4px; }
 
+/* Stay: strip of suite photos */
+.photo-strip { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin-top:64px; }
+.photo-strip-item { position:relative; aspect-ratio:3/4; overflow:hidden; background:var(--ember); }
+.photo-strip-item img { transition:transform 1.2s var(--ease),filter .5s ease; filter:brightness(.88); }
+.photo-strip-item:hover img { filter:brightness(1); transform:scale(1.05); }
+.photo-strip-item span { position:absolute; right:0; bottom:0; left:0; padding:50px 16px 14px; background:linear-gradient(transparent,rgba(13,10,8,.8)); font-family:var(--font-display),serif; font-size:1.15rem; font-style:italic; }
+.motion .photo-strip-item.reveal:nth-child(2) { transition-delay:.1s; }
+.motion .photo-strip-item.reveal:nth-child(3) { transition-delay:.2s; }
+.motion .photo-strip-item.reveal:nth-child(4) { transition-delay:.3s; }
+
 /* Restaurant teaser (suite page) */
 .restaurant-teaser { display:grid; grid-template-columns:1.1fr .9fr; min-height:86svh; background:var(--coal); }
 .restaurant-teaser-copy { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:8vw; }
@@ -387,6 +412,10 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
   .policy-grid,.guide-grid,.amenity-grid { grid-template-columns:1fr; }
   .guide-item:nth-child(n) { margin-top:0; }
   .rail-card { width:78vw; }
+  .photo-wall { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; max-height:120svh; }
+  .photo-wall-col { gap:8px; }
+  .photo-wall-col-3 { display:none; }
+  .photo-strip { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:44px; }
   .story-year { top:16%; font-size:42vw; }
   .footer-lead { display:block; }
   .footer-lead p { margin-top:30px; }
