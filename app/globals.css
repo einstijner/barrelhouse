@@ -186,8 +186,13 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
 .discover { --p:.5; position:relative; display:grid; grid-template-columns:.85fr 1.15fr; gap:6vw; align-items:center; padding:clamp(100px,12vw,180px) var(--gutter); background:var(--coal); }
 .discover-copy h2 { margin-bottom:34px; font-size:clamp(3.2rem,7vw,7rem); }
 .discover-photo { position:relative; margin:0; overflow:hidden; }
-.discover-photo-a { aspect-ratio:4/5; }
-.discover-photo-b { position:absolute; bottom:8%; left:34%; width:min(24vw,340px); aspect-ratio:3/4; box-shadow:0 30px 80px rgba(0,0,0,.55); }
+.discover-photo-a { aspect-ratio:16/10; }
+/* Overlaps the aerial's lower-left corner, starting just inside the column gap so it never covers the heading. */
+.discover-photo-b { position:absolute; bottom:12%; left:calc(var(--gutter) + (100% - 2 * var(--gutter) - 6vw) * .425 + 2vw); width:min(20vw,300px); aspect-ratio:3/4; box-shadow:0 30px 80px rgba(0,0,0,.55); }
+.photo-credit { margin:0; color:var(--muted); font-size:.68rem; letter-spacing:.04em; }
+.photo-credit a { text-decoration:underline; text-underline-offset:3px; }
+.discover .photo-credit { position:absolute; right:var(--gutter); bottom:clamp(40px,5vw,72px); }
+.split-copy .photo-credit { margin-top:28px; }
 .motion .discover-photo-a img { transform:translateY(calc((var(--p) - .5) * -8%)) scale(1.1); }
 .motion .discover-photo-b { transform:translateY(calc((.5 - var(--p)) * 160px)); }
 
@@ -381,7 +386,8 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
   .section-head h2 { margin-bottom:28px; }
   .fact-grid { grid-template-columns:repeat(3,1fr); }
   .discover { grid-template-columns:1fr; gap:50px; }
-  .discover-photo-b { left:auto; right:var(--gutter); bottom:-6%; width:44vw; }
+  .discover-photo-b { position:relative; bottom:auto; left:auto; width:44vw; margin:-22vw 0 0 auto; }
+  .discover .photo-credit { position:static; margin-top:-34px; }
   .facts-row { grid-template-columns:repeat(2,auto); gap:12px 40px; }
   .motion .suite-feature { --x0:8vw; --y0:16svh; }
   .menu-columns { grid-template-columns:1fr; }

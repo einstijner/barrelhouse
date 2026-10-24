@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { BookBand } from "@/components/book-band";
 import { PageHero } from "@/components/page-hero";
-import { suiteImages } from "@/content/images";
+import { statiaImages } from "@/content/images";
 
 export const metadata: Metadata = { title:"Discover Statia", description:"A considered guide to Sint Eustatius: The Quill, protected diving waters, historic Oranjestad and the Lower Town coastline." };
 
@@ -15,7 +15,7 @@ const experiences = [
 ];
 
 export default function DiscoverPage() {
-  return <><PageHero eyebrow="Discover Sint Eustatius" title={<>Small island.<br /><em>Deep story.</em></>} copy="Volcanic forest, protected water and centuries of visible history—best discovered without rushing." image={suiteImages[2]} />
+  return <><PageHero eyebrow="Discover Sint Eustatius" title={<>Small island.<br /><em>Deep story.</em></>} copy="Volcanic forest, protected water and centuries of visible history—best discovered without rushing." image={statiaImages.aerial} />
     <section className="section section-white"><div className="wrap"><div className="section-head"><div><p className="eyebrow">A considered guide</p><h2>Four ways into Statia.</h2></div><div className="section-head-copy"><p>Barrel House puts you on the historic waterfront, close to dive departures and within walking distance of Oranjestad. These are starting points, not a checklist.</p></div></div><div className="guide-grid">{experiences.map((item) => <article className="guide-item" key={item.n}><span className="eyebrow">{item.n}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div><div style={{marginTop:80}}><a className="button" href="https://www.sinteustatius.com/" target="_blank" rel="noreferrer">Official island guide <ArrowUpRight size={15} /></a></div></div></section>
-    <section className="split-section"><div className="split-image"><Image src={suiteImages[5].src} alt={suiteImages[5].alt} fill sizes="(max-width:1000px)100vw,50vw" /></div><div className="split-copy"><p className="eyebrow">Your starting point</p><h2>Wake in Lower Town.</h2><p>The sea, the old harbour warehouses and the path up toward Oranjestad begin outside the door. Barrel House is less a retreat from the island than a way into it.</p></div></section><BookBand /></>;
+    <section className="split-section"><div className="split-image"><Image src={statiaImages.lowerTown.src} alt={statiaImages.lowerTown.alt} fill sizes="(max-width:1000px)100vw,50vw" /></div><div className="split-copy"><p className="eyebrow">Your starting point</p><h2>Wake in Lower Town.</h2><p>The sea, the old harbour warehouses and the path up toward Oranjestad begin outside the door. Barrel House is less a retreat from the island than a way into it.</p><p className="photo-credit">Photo: <a href={statiaImages.lowerTown.credit.source} target="_blank" rel="noreferrer">{statiaImages.lowerTown.credit.name}</a>, <a href={statiaImages.lowerTown.credit.licenseUrl} target="_blank" rel="noreferrer">{statiaImages.lowerTown.credit.license}</a></p></div></section><BookBand /></>;
 }

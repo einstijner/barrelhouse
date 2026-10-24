@@ -31,6 +31,12 @@ export const homeHeroImage: PropertyImage = {
   caption: "Sunset on the terrace",
 };
 
+/** Island photography. Creative Commons images carry the credit the licence requires; show it wherever the image appears. */
+export const statiaImages = {
+  aerial: { src: "/images/statia/statia-aerial.jpg", width: 2560, height: 1440, alt: "Aerial view of Sint Eustatius at golden hour, with Oranjestad, the bay and The Quill", caption: "Sint Eustatius from the air" },
+  lowerTown: { src: "/images/statia/lower-town.webp", width: 1232, height: 910, alt: "Palms along the historic Lower Town waterfront on Sint Eustatius", caption: "Lower Town waterfront", credit: { name: "Walter Hellebrand", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Lower_Town_Sint_Eustatius.jpg", licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/" } },
+} satisfies Record<string, PropertyImage & { credit?: { name: string; license: string; source: string; licenseUrl: string } }>;
+
 /** Evening and golden-hour photography for the dark, romantic sections of the site. */
 export const moodImages = {
   cocktails: { src: "/images/restaurant/gallery/436A8947-Enhanced-NR.jpg", width: 2048, height: 1365, alt: "Cocktails and a lamp on a terrace table at dusk, with the bay behind", caption: "Golden hour" },

@@ -7,7 +7,7 @@ import { Drift, Rail, Scene, Words } from "@/components/motion";
 import { JsonLd } from "@/components/schema";
 import { SuiteGalleryPreview } from "@/components/suite-gallery-preview";
 import { property, siteUrl } from "@/content/property";
-import { homeHeroImage, moodImages, restaurantGalleryImages, restaurantImages, suiteImages } from "@/content/images";
+import { homeHeroImage, moodImages, restaurantGalleryImages, restaurantImages, statiaImages, suiteImages } from "@/content/images";
 
 const tableMoments = [moodImages.cocktails, moodImages.soup, moodImages.arch, moodImages.chef, moodImages.plate, moodImages.server, moodImages.drinks, moodImages.terraceNight];
 
@@ -90,8 +90,9 @@ export default function Home() {
 
     <Drift as="section" className="discover">
       <div className="discover-copy reveal"><p className="eyebrow">Beyond the house</p><h2>Statia, <em>at its own pace.</em></h2><Link className="text-link" href="/discover-statia">Explore the island <ArrowRight size={15} aria-hidden="true" /></Link></div>
-      <figure className="discover-photo discover-photo-a"><Image src={restaurantImages.waterfront.src} alt={restaurantImages.waterfront.alt} fill sizes="(max-width: 800px) 100vw, 45vw" /></figure>
-      <figure className="discover-photo discover-photo-b"><Image src={suiteImages[10].src} alt={suiteImages[10].alt} fill sizes="(max-width: 800px) 70vw, 28vw" /></figure>
+      <figure className="discover-photo discover-photo-a"><Image src={statiaImages.aerial.src} alt={statiaImages.aerial.alt} fill sizes="(max-width: 900px) 100vw, 58vw" /></figure>
+      <figure className="discover-photo discover-photo-b"><Image src={statiaImages.lowerTown.src} alt={statiaImages.lowerTown.alt} fill sizes="(max-width: 900px) 50vw, 26vw" /></figure>
+      <p className="photo-credit">Lower Town photo: <a href={statiaImages.lowerTown.credit.source} target="_blank" rel="noreferrer">{statiaImages.lowerTown.credit.name}</a>, <a href={statiaImages.lowerTown.credit.licenseUrl} target="_blank" rel="noreferrer">{statiaImages.lowerTown.credit.license}</a></p>
     </Drift>
 
     <BookBand />
