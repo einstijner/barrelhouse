@@ -20,7 +20,6 @@ export default function Home() {
       <div className="home-hero-media"><Image src={homeHeroImage.src} alt={homeHeroImage.alt} fill priority sizes="100vw" /></div>
       <div className="home-hero-shade" />
       <div className="home-hero-copy">
-        <Image className="home-hero-logo" src="/logos/barrel-house-reference.png" alt="" width={300} height={316} priority />
         <p className="eyebrow">Lower Town · Sint Eustatius</p>
         <h1 id="home-title">A different kind <em>of stay.</em></h1>
         <div className="hero-actions"><BookingLink className="button button-gold" /><TableLink className="button button-light" /></div>
