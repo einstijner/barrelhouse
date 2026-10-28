@@ -408,3 +408,13 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
 .suite-dining-note p:not(.eyebrow) { max-width:540px; color:var(--muted); }
 .suite-dining-note .hero-actions { flex-shrink:0; }
 @media (max-width:900px) { .suite-dining-note { flex-direction:column; align-items:flex-start; } }
+
+/* Official menu artwork stays uncropped and opens at its original resolution. */
+.menu-card-published { max-width:1280px; padding-inline:clamp(20px,4vw,64px); }
+.published-menus { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; gap:48px 28px; margin:44px 0; text-align:left; }
+.published-menu { min-width:0; margin:0; }
+.published-menu h3 { font-size:2rem; margin-bottom:20px; }
+.published-menu > a { display:block; background:white; cursor:zoom-in; }
+.published-menu img { display:block; width:100%; height:auto; object-fit:contain; }
+.published-menu figcaption { display:flex; flex-wrap:wrap; gap:18px; margin-top:18px; }
+@media (max-width:800px) { .published-menus { grid-template-columns:1fr; } }

@@ -27,7 +27,7 @@ npm start
 - Accommodation images and alt text: `content/images.ts`
 - Guest FAQ: `content/faq.ts`
 - Navigation: `content/navigation.ts`
-- Restaurant menu: `content/menu.ts`. Add the sections and dishes exactly as the restaurant publishes them; until then the menu section on `/restaurant#menu` links to the current menu and table reservations instead of showing placeholder dishes.
+- Restaurant menu: `content/menu.ts` records the source URLs and dimensions of the official menu images downloaded on 28 October 2026. Original files live in `public/menus/` and display directly on `/restaurant#menu` with full-size and download links. To refresh the menu, download the artwork currently linked from the official restaurant website and update the metadata.
 
 ## Scroll motion
 

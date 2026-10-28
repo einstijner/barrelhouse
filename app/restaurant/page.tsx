@@ -16,19 +16,21 @@ export default function RestaurantPage() {
 
     <section className="menu-section" id="menu" aria-labelledby="menu-title">
       <div className="menu-section-photo"><Image src={moodImages.tableNight.src} alt="" fill sizes="100vw" /></div>
-      <div className="menu-card reveal">
+      <div className="menu-card menu-card-published">
         <Image className="menu-card-logo" src="/logos/barrel-house-reference.png" alt="" width={300} height={316} />
         <p className="eyebrow">The menu</p>
         <h2 id="menu-title">International cooking, <em>a regional touch.</em></h2>
-        {menu.sections.length > 0 ? (
-          <div className="menu-columns">
-            {menu.sections.map((section) => <div className="menu-group" key={section.title}>
-              <h3>{section.title}</h3>
-              <ul>{section.items.map((item) => <li key={item.name}><span className="menu-item-name">{item.name}</span>{item.price && <span className="menu-item-price">{item.price}</span>}{item.description && <span className="menu-item-description">{item.description}</span>}</li>)}</ul>
-            </div>)}
-          </div>
-        ) : <p className="menu-card-note">Everything is cooked from scratch, and the menu changes with the kitchen. See what’s on now, then reserve your table.</p>}
-        <div className="hero-actions"><a className="button button-gold" href={menu.currentMenuUrl} target="_blank" rel="noreferrer">See the current menu <ArrowUpRight size={15} aria-hidden="true" /></a><TableLink className="button button-light" /></div>
+        <p className="menu-card-note">Browse our lunch, dinner and drinks menus below. Select a menu to view it at full size.</p>
+        <div className="published-menus">
+          {menu.pages.map((page) => <figure className="published-menu" key={page.src}>
+            <h3>{page.title}</h3>
+            <a href={page.src} target="_blank" rel="noreferrer" aria-label={`View ${page.title} menu at full size (opens in a new tab)`}>
+              <Image src={page.src} alt={`Barrel House ${page.title} menu with dishes and prices. Open at full size to read all details.`} width={page.width} height={page.height} sizes="(max-width: 800px) 90vw, 520px" />
+            </a>
+            <figcaption><a className="text-link" href={page.src} target="_blank" rel="noreferrer">View full size <ArrowUpRight size={15} aria-hidden="true" /></a><a className="text-link" href={page.src} download>Download menu</a></figcaption>
+          </figure>)}
+        </div>
+        <div className="hero-actions"><TableLink className="button button-gold" /></div>
       </div>
     </section>
 

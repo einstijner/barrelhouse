@@ -71,3 +71,22 @@ test("below-fold property images load when scrolled into view", async ({ page })
   expect(await image.evaluate((element) => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await page.locator(".suite-feature").screenshot({ path: "qa/home-suite-section.png" });
 });
+
+test("official menus are readable on the restaurant page and downloadable", async ({ page, request }) => {
+  await page.goto("/restaurant#menu");
+  const menus = page.locator(".published-menu");
+  await expect(menus).toHaveCount(3);
+  for (const menu of await menus.all()) {
+    const image = menu.locator("img");
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toBeVisible();
+    await expect.poll(() => image.evaluate((element) => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    const download = menu.getByRole("link", { name: "Download menu" });
+    await expect(download).toHaveAttribute("download", "");
+    const response = await request.get((await download.getAttribute("href"))!);
+    expect(response.status()).toBe(200);
+    expect(response.headers()["content-type"]).toContain("image/png");
+    await expect(menu.getByRole("link", { name: "View full size", exact: true })).toHaveAttribute("href", (await download.getAttribute("href"))!);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
