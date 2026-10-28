@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { suiteImages, suiteOverviewImage } from "@/content/images";
 
-const images = [suiteOverviewImage, ...suiteImages];
+const images = [...suiteImages, suiteOverviewImage];
 
 export function SuiteGalleryPreview() {
   const [active, setActive] = useState<number | null>(null);
@@ -31,7 +31,7 @@ export function SuiteGalleryPreview() {
 
   return <>
     <button className="suite-gallery-preview" type="button" onClick={() => setActive(0)} aria-label="Open the Barrel House Suite photo gallery">
-      <Image src={suiteOverviewImage.src} alt={suiteOverviewImage.alt} fill sizes="(max-width: 1000px) 100vw, 65vw" />
+      <Image src={images[0].src} alt={images[0].alt} fill sizes="(max-width: 1000px) 100vw, 65vw" />
       <span>View gallery <Expand size={16} aria-hidden="true" /></span>
     </button>
     {active !== null && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Barrel House Suite photo gallery">

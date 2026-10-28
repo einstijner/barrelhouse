@@ -401,3 +401,10 @@ h1 em,h2 em,h3 em { color:var(--gold); font-style:italic; font-weight:400; }
   html { scroll-behavior:auto; }
   *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
 }
+
+/* Keep dining secondary to the suite photography on the homepage. */
+.suite-dining-note { display:flex; align-items:center; justify-content:space-between; gap:36px; padding-block:clamp(48px,7vw,96px); }
+.suite-dining-note h2 { font-size:clamp(2.5rem,4vw,4rem); margin-bottom:18px; }
+.suite-dining-note p:not(.eyebrow) { max-width:540px; color:var(--muted); }
+.suite-dining-note .hero-actions { flex-shrink:0; }
+@media (max-width:900px) { .suite-dining-note { flex-direction:column; align-items:flex-start; } }

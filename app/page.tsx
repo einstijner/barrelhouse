@@ -7,9 +7,9 @@ import { Drift, Rail, Scene, Words } from "@/components/motion";
 import { JsonLd } from "@/components/schema";
 import { SuiteGalleryPreview } from "@/components/suite-gallery-preview";
 import { property, siteUrl } from "@/content/property";
-import { homeHeroImage, moodImages, restaurantImages, suiteImages } from "@/content/images";
+import { homeHeroImage, restaurantImages, suiteImages } from "@/content/images";
 
-const tableMoments = [moodImages.cocktails, moodImages.soup, moodImages.arch, moodImages.chef, moodImages.plate, moodImages.server, moodImages.drinks, moodImages.terraceNight];
+const suiteInteriors = [suiteImages[1], suiteImages[8], suiteImages[3], suiteImages[5], suiteImages[6], suiteImages[11]];
 
 export default function Home() {
   return <>
@@ -22,7 +22,7 @@ export default function Home() {
       <div className="home-hero-copy">
         <p className="eyebrow">Lower Town · Sint Eustatius</p>
         <h1 id="home-title">A different kind <em>of stay.</em></h1>
-        <div className="hero-actions"><BookingLink className="button button-gold" /><TableLink className="button button-light" /></div>
+        <div className="hero-actions"><BookingLink className="button button-gold" /><Link className="button button-light" href="/stay/barrel-house-suite">Explore the suite</Link></div>
       </div>
       <span className="scroll-cue" aria-hidden="true">Scroll</span>
     </Scene>
@@ -31,14 +31,14 @@ export default function Home() {
       <p className="statement-text"><Words text="Three centuries of brick and timber, carefully restored for an intimate stay" accent="at the edge of the Caribbean Sea." /></p>
     </Scene>
 
-    <section className="diptych" aria-label="Stay and dine">
+    <section className="diptych" aria-label="Inside the suite">
       <Link href="/stay" className="diptych-panel reveal">
         <Image src={suiteImages[1].src} alt={suiteImages[1].alt} fill sizes="(max-width: 800px) 100vw, 50vw" />
-        <span className="diptych-label"><small>01</small><strong>Stay</strong><em>One suite. Entirely yours.</em></span>
+        <span className="diptych-label"><small>01</small><strong>Sleep</strong><em>A king bed beneath the timber roof.</em></span>
       </Link>
-      <Link href="/restaurant" className="diptych-panel reveal">
-        <Image src={moodImages.tableNight.src} alt={moodImages.tableNight.alt} fill sizes="(max-width: 800px) 100vw, 50vw" />
-        <span className="diptych-label"><small>02</small><strong>Dine</strong><em>A table at the water’s edge.</em></span>
+      <Link href="/stay/barrel-house-suite" className="diptych-panel reveal">
+        <Image src={suiteImages[0].src} alt={suiteImages[0].alt} fill sizes="(max-width: 800px) 100vw, 50vw" />
+        <span className="diptych-label"><small>02</small><strong>Unwind</strong><em>Your own living room, downstairs.</em></span>
       </Link>
     </section>
 
@@ -52,19 +52,14 @@ export default function Home() {
       </div>
     </Scene>
 
-    <Rail className="table-rail" labelledBy="table-title" head={<div className="wrap rail-head"><p className="eyebrow">At the table</p><h2 id="table-title">Stay for the view. <em>Come for the table.</em></h2></div>}>
-      {tableMoments.map((image) => <figure className="rail-card" key={image.src}><Image src={image.src} alt={image.alt} fill sizes="(max-width: 700px) 78vw, 30vw" /><figcaption>{image.caption}</figcaption></figure>)}
-      <div className="rail-card rail-card-cta"><p className="eyebrow">Barrel House restaurant</p><h3>Lunch or dinner, <em>by the sea.</em></h3><TableLink className="button button-gold" /><Link className="text-link" href="/restaurant#menu">See the menu</Link></div>
+    <Rail className="suite-rail" labelledBy="interiors-title" head={<div className="wrap rail-head"><p className="eyebrow">Inside your suite</p><h2 id="interiors-title">Room to settle in. <em>Space to make your own.</em></h2></div>}>
+      {suiteInteriors.map((image) => <figure className="rail-card" key={image.src}><Image src={image.src} alt={image.alt} fill sizes="(max-width: 700px) 78vw, 30vw" /><figcaption>{image.caption}</figcaption></figure>)}
+      <div className="rail-card rail-card-cta"><p className="eyebrow">Entirely yours</p><h3>One private suite. <em>Two levels of comfort.</em></h3><Link className="button button-gold" href="/stay/barrel-house-suite">Explore the suite</Link><BookingLink className="text-link" /></div>
     </Rail>
 
-    <section className="menu-teaser" aria-labelledby="menu-teaser-title">
-      <Drift className="menu-teaser-image"><Image src={moodImages.soup.src} alt={moodImages.soup.alt} fill sizes="(max-width: 900px) 100vw, 55vw" /></Drift>
-      <div className="menu-teaser-copy reveal">
-        <p className="eyebrow">The menu</p>
-        <h2 id="menu-teaser-title">International cooking, <em>a regional touch.</em></h2>
-        <p>Chef Iwan’s menu changes. The setting does not.</p>
-        <div className="hero-actions"><Link className="button button-gold" href="/restaurant#menu">View the menu</Link><TableLink className="button button-light" /></div>
-      </div>
+    <section className="suite-dining-note wrap" aria-labelledby="dining-title">
+      <div><p className="eyebrow">Dinner close by</p><h2 id="dining-title">A table by the sea.</h2><p>The adjoining Barrel House restaurant is there when you feel like dining out.</p></div>
+      <div className="hero-actions"><Link className="text-link" href="/restaurant">Discover the restaurant</Link><TableLink className="text-link" /></div>
     </section>
 
     <Drift as="section" className="story-band">

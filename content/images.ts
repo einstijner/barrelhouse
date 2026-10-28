@@ -23,13 +23,7 @@ export const suiteImages: PropertyImage[] = [
   { src: "/images/property/barrel-house-living-wide.jpg", width: 1500, height: 2000, alt: "Vaulted living room inside the Barrel House Suite", caption: "The downstairs living room" },
 ];
 
-export const homeHeroImage: PropertyImage = {
-  src: "/images/restaurant/gallery/436A8901.jpg",
-  width: 2048,
-  height: 1365,
-  alt: "The Barrel House oceanfront terrace at sunset, with sailboats on the bay",
-  caption: "Sunset on the terrace",
-};
+export const homeHeroImage: PropertyImage = suiteImages[0];
 
 /** Evening and golden-hour photography for the dark, romantic sections of the site. */
 export const moodImages = {
